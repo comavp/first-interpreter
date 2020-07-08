@@ -1,0 +1,27 @@
+int quadraticEquation(double a, double b, double c) {
+	double d = pow(b, 2) - 4 * a * c;
+	int rootAmount;
+	if (d >= 0) {
+		if (d == 0) {
+			print("x1&2 = " + -b/2*a);
+			rootAmount = 1;
+		} else {
+			print("x1 = " + (-b + sqrt(d))/(2 * a) + "x2 = " + (-b - sqrt(d))/(2 * a));
+			rootAmount = 2;
+		}
+	} else {
+		print("There is no real roots");
+		rootAmount = 0;
+	}
+	return rootAmount;
+}
+
+int main() {
+	double a, b, c;
+	print("Type three numbers: ");
+	scan(a);
+	scan(b);
+	scan(c);
+	print(quadraticEquation(a, b, c));
+	return 0;
+}
