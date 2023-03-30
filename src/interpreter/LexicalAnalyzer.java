@@ -1,9 +1,7 @@
 package interpreter;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 public class LexicalAnalyzer {
     private String text;

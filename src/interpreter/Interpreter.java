@@ -1,12 +1,10 @@
 package interpreter;
 
-import org.omg.PortableInterceptor.INACTIVE;
-
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.Stack;
 import java.util.TreeMap;
-import java.util.Scanner;
 
 public class Interpreter {
 

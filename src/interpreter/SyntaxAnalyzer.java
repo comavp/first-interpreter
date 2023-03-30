@@ -1,7 +1,10 @@
 package interpreter;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Stack;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class SyntaxAnalyzer {
 
