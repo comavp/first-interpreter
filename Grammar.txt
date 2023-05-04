@@ -1,0 +1,24 @@
+program ::= {func-definition}
+func-definition ::= (type|VOID) ID LRBRACKET [formal-parameters] RRBRACKET block 
+formal-parameters ::= var {COMMA var}
+type ::= INTEGER|STRING|DOUBLE|
+statement ::= block|var-statement|while-statement|if-statement|print-statement|
+		scan-statement|for-statement|pow-statement|sqrt-statement|BREAK SEP|CONTINUE SEP|func-call SEP|return
+block ::= LCBRACKET {statement} RCBRACKET
+var-statement ::= (var|assignment) {COMMA (ID|assignment)} SEP
+var ::= type ID
+while-statement ::= WHILE LRBRACKET expr RRBRACKET block
+if-statement ::= IF LRBRACKET expr RRBRACKET block [ELSE block]
+print-statement ::= PRINT LRBRACKET expr RRBRACKET SEP
+scan-statement ::= SCAN LRBRACKET ID RRBRACKET SEP
+for-statement ::= FOR LRBRACKET expr SEP expr SEP expr RRBRACKET block
+pow-statement ::= POW LRBRACKET expr COMMA expr RRBRACKET SEP
+sqrt-statement ::= SQRT LRBRACKET expr RRBRACKET SEP
+func-call ::= ID LRBRACKET [expr {COMMA expr}] RRBRACKET
+assignment ::= ID ASSIGN expr
+return ::= RETURN expr SEP
+expr ::= rel-expr {(AND|OR) rel-expr}
+rel-expr ::= arith-expr {(LT|LTE|GT|GTE|EQ) arith-expr}
+arith-expr ::= term {(PLUS|MINUS) term}
+term ::= factor {(MUL|DIV|MOD) factor}
+factor ::= PLUS factor|MINUS factor|LRBRACKET expr RRBRACKET|INT-LITERAL|DOUBLE-LITERAL|STRINGS-LITERAL|ID|func-call
